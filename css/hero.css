@@ -1,5 +1,5 @@
-.hero{
-    position: relative;
+.hero {
+  position: relative;
 }
 
 .hero__learn-more {
@@ -28,6 +28,5 @@
 .hero__image {
   position: absolute;
   right: -10%;
-  top: 30%;
+  top: 25%;
 }
-
