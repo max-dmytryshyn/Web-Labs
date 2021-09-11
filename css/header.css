@@ -19,6 +19,12 @@
   font-weight: 500;
 }
 
+.header__nav-item:hover {
+  color: #212353;
+  font-weight: 800;
+  line-height: 60%;
+}
+
 .header__logo {
   margin-right: 81px;
 }
