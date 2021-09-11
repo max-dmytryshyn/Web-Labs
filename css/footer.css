@@ -84,6 +84,10 @@ footer {
   bottom: 0;
 }
 
+.footer__buttons__messager:hover {
+  bottom: 5px;
+}
+
 @media screen and (max-width: 768px) {
   .footer {
     display: flex;
