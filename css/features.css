@@ -47,6 +47,11 @@
   color: #212353;
 }
 
+.features__description__learn-more:hover {
+  border-radius: 1rem;
+  padding: 0px 10px;
+}
+
 .features__description > * {
   background-repeat: no-repeat;
   background-position-x: right;
