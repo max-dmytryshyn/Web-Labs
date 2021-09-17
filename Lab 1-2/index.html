@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 1</title>
+    <title>Lab 2</title>
 
     <!-- My styles -->
     <link rel="stylesheet" href="css/styles.css" />
@@ -13,8 +13,7 @@
       <div class="container">
         <header class="header">
           <img src="images/logo.svg" class="header__logo" alt="logo" />
-
-          <nav class="header__nav">
+          <nav id="nav-links" class="header__nav">
             <ul>
               <li class="header__nav-item"><a href="">About</a></li>
               <li class="header__nav-item"><a href="">Help</a></li>
@@ -27,6 +26,10 @@
             Request Demo
             <img src="images/arrow_icon.svg" />
           </button>
+
+          <div class="header__menu" onclick="toggleMenu()">
+            <img src="/images/menu_icon.svg" alt="Menu icon" />
+          </div>
         </header>
       </div>
 
@@ -80,14 +83,14 @@
 
         <div class="features__description">
           <div class="features__search-data">
-            <div class="feature__search-data__image">
+            <div class="features__search-data__image">
               <img
                 src="images/search_data_feature_img.svg"
                 alt="Security code image"
               />
             </div>
 
-            <div class="feature__search-data__text">
+            <div class="features__search-data__text">
               <h3>Search Data</h3>
               <p class="features__description__paragraph">
                 Don’t worry if your data is very large, the Data Warehoue
@@ -195,5 +198,7 @@
         </footer>
       </div>
     </section>
+
+    <script src="js/main.js"></script>
   </body>
 </html>
