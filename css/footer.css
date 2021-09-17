@@ -137,7 +137,7 @@ footer {
   }
 
   .footer__buttons__request-demo {
-    width: 100vw;
+    width: 100%;
     position: relative;
     top: -110px;
 
