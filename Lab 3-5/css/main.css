@@ -6,9 +6,14 @@ main {
 
 .saws-managment {
   width: 400px;
+  height: 100%;
   padding: 20px;
   position: fixed;
   left: 345px;
+
+  border-right: solid;
+  border-color: green;
+  border-width: 10px;
 
   display: flex;
   flex-direction: column;
@@ -111,7 +116,4 @@ main {
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  border-left: solid;
-  border-color: green;
-  border-width: 10px;
 }
