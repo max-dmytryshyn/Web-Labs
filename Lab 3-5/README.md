@@ -18,8 +18,6 @@
 
 ![](readme_images/demo_view_page.png)
 
-# [DEMO](https://max-dmytryshyn.github.io/Web-Labs/)(may be broken due to github pages problems)
-
 ## Design template
 
 https://wireframepro.mockflow.com/view/lviv-iot-crud-js-app
