@@ -1,0 +1,18 @@
+.saw-card {
+  margin: 6.5px;
+  padding: 10px;
+  background-color: green;
+  border-radius: 10px;
+
+  color: white;
+}
+
+.saw-card__body__title {
+  font-size: 20px;
+  margin: 5px 0px;
+}
+
+.saw-card__body__paragraph {
+  font-size: 16px;
+  margin: 10px 0px;
+}
