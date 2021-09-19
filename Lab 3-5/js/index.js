@@ -39,37 +39,37 @@ let saw4 = {
   lengthInCm: 14,
 };
 let saws = [saw1, saw2, saw3, saw4, saw1, saw2, saw3, saw4, saw1, saw1];
-let current_saws = [...saws];
+let currentSaws = [...saws];
 
-window.onload = renderSawList(current_saws);
+window.onload = renderSawList(currentSaws);
 
 searchButton.addEventListener("click", () => {
   event.preventDefault();
-  current_saws = saws.filter((saw) => saw.materialToSaw.includes(searchInput.value.toUpperCase()));
-  renderSawList(current_saws);
+  currentSaws = saws.filter((saw) => saw.materialToSaw.includes(searchInput.value.toUpperCase()));
+  renderSawList(currentSaws);
 });
 
 cancelSearchButton.addEventListener("click", () => {
   event.preventDefault();
-  current_saws = [...saws];
+  currentSaws = [...saws];
   searchInput.value = "";
-  renderSawList(current_saws);
+  renderSawList(currentSaws);
 });
 
 sortAscButton.addEventListener("click", () => {
-  current_saws = current_saws.sort((a, b) => {
+  currentSaws = currentSaws.sort((a, b) => {
     return b.lengthInCm - a.lengthInCm;
   });
-  renderSawList(current_saws);
+  renderSawList(currentSaws);
 });
 
 sortDescButton.addEventListener("click", () => {
-  current_saws = current_saws.sort(function (a, b) {
+  currentSaws = currentSaws.sort(function (a, b) {
     return a.lengthInCm - b.lengthInCm;
   });
-  renderSawList(current_saws);
+  renderSawList(currentSaws);
 });
 
 countButton.addEventListener("click", () => {
-  countTotalLength(current_saws);
+  countTotalLength(currentSaws);
 });

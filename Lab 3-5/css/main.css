@@ -111,7 +111,6 @@ main {
 }
 
 .saws-display {
-  justify-self: right;
   width: 700px;
   padding: 20px;
   display: flex;
