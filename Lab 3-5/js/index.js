@@ -42,14 +42,14 @@ let current_saws = [...saws];
 
 window.onload = renderSawList(current_saws);
 
-function test() {
-  console.log("OK");
-}
-
-searchButton.addEventListener("click", () => {});
+searchButton.addEventListener("click", () => {
+  event.preventDefault();
+  current_saws = saws.filter((saw) => saw.materialToSaw.includes(searchInput.value));
+  renderSawList(current_saws);
+});
 
 sortAscButton.addEventListener("click", () => {
-  current_saws = current_saws.sort(function (a, b) {
+  current_saws = current_saws.sort((a, b) => {
     return b.lengthInCm - a.lengthInCm;
   });
   renderSawList(current_saws);
