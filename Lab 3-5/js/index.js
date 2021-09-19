@@ -1,13 +1,9 @@
-import { renderSawList } from "./dom_utils.js";
-//Searching elements
+import { renderSawList, countTotalLength } from "./dom_utils.js";
 const searchButton = document.getElementById("search_button");
 const searchInput = document.getElementById("search_input");
-//Sorting elements
 const sortAscButton = document.getElementById("sort_asc_button");
 const sortDescButton = document.getElementById("sort_desc_button");
-//Counting elements
 const countButton = document.getElementById("count_button");
-const totalLengthDisplay = document.getElementById("total_length");
 //Sample saws array
 let saw1 = {
   id: 1,
@@ -15,7 +11,7 @@ let saw1 = {
   driveType: "MECHANICAL",
   sawMaterial: { handleMaterial: "plastic", bladeMaterial: "metal" },
   user: { name: "Max", age: 18 },
-  lengthInCm: 16.5,
+  lengthInCm: 1,
 };
 let saw2 = {
   id: 2,
@@ -23,7 +19,7 @@ let saw2 = {
   driveType: "MECHANICAL",
   sawMaterial: { handleMaterial: "plastic", bladeMaterial: "metal" },
   user: { name: "Max", age: 18 },
-  lengthInCm: 16.5,
+  lengthInCm: 2,
 };
 let saw3 = {
   id: 3,
@@ -31,7 +27,7 @@ let saw3 = {
   driveType: "MECHANICAL",
   sawMaterial: { handleMaterial: "plastic", bladeMaterial: "metal" },
   user: { name: "Max", age: 18 },
-  lengthInCm: 16.5,
+  lengthInCm: 3,
 };
 let saw4 = {
   id: 4,
@@ -39,11 +35,12 @@ let saw4 = {
   driveType: "MECHANICAL",
   sawMaterial: { handleMaterial: "plastic", bladeMaterial: "metal" },
   user: { name: "Max", age: 18 },
-  lengthInCm: 16.5,
+  lengthInCm: 4,
 };
 let saws = [saw1, saw2, saw3, saw4, saw1, saw1, saw1, saw1, saw1, saw1];
+let current_saws = saws;
 
-window.onload = renderSawList(saws);
+window.onload = renderSawList(current_saws);
 
 function test() {
   console.log("OK");
@@ -62,5 +59,5 @@ sortDescButton.addEventListener("click", () => {
 });
 
 countButton.addEventListener("click", () => {
-  test();
+  countTotalLength(current_saws);
 });

@@ -1,4 +1,5 @@
 const sawsContainer = document.getElementById("saws_list");
+const totalLengthDisplay = document.getElementById("total_length");
 
 const getSawId = (id) => `saw-${id}`;
 
@@ -23,6 +24,14 @@ const sawTemplate = ({ id, materialToSaw, driveType, sawMaterial, user, lengthIn
   </div>
 `;
 
+export const countTotalLength = (saws) => {
+  let totalLength = 0;
+  for (const saw of saws) {
+    totalLength += saw.lengthInCm;
+  }
+  totalLengthDisplay.textContent = `${totalLength} cm`;
+};
+
 export const addSawToPage = ({ id, materialToSaw, driveType, sawMaterial, user, lengthInCm }) => {
   sawsContainer.insertAdjacentHTML(
     "afterbegin",
@@ -30,10 +39,10 @@ export const addSawToPage = ({ id, materialToSaw, driveType, sawMaterial, user, 
   );
 };
 
-export const renderSawList = (items) => {
+export const renderSawList = (saws) => {
   sawsContainer.innerHTML = "";
 
-  for (const item of items) {
-    addSawToPage(item);
+  for (const saw of saws) {
+    addSawToPage(saw);
   }
 };
