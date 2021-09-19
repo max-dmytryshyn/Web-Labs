@@ -1,5 +1,6 @@
 import { renderSawList, countTotalLength } from "./dom_utils.js";
 const searchButton = document.getElementById("search_button");
+const cancelSearchButton = document.getElementById("cancel_search_button");
 const searchInput = document.getElementById("search_input");
 const sortAscButton = document.getElementById("sort_asc_button");
 const sortDescButton = document.getElementById("sort_desc_button");
@@ -44,7 +45,14 @@ window.onload = renderSawList(current_saws);
 
 searchButton.addEventListener("click", () => {
   event.preventDefault();
-  current_saws = saws.filter((saw) => saw.materialToSaw.includes(searchInput.value));
+  current_saws = saws.filter((saw) => saw.materialToSaw.includes(searchInput.value.toUpperCase()));
+  renderSawList(current_saws);
+});
+
+cancelSearchButton.addEventListener("click", () => {
+  event.preventDefault();
+  current_saws = [...saws];
+  searchInput.value = "";
   renderSawList(current_saws);
 });
 
