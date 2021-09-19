@@ -16,3 +16,50 @@
   font-size: 16px;
   margin: 10px 0px;
 }
+
+.saw-card__buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.saw-card__edit-button {
+  background-color: white;
+  border-radius: 8px;
+  border: solid;
+  border-color: blue;
+  border-width: 3px;
+  width: 95px;
+
+  padding: 3px 0px;
+
+  font-size: 18px;
+  color: blue;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.saw-card__edit-button:hover {
+  background-color: blue;
+  color: white;
+}
+
+.saw-card__delete-button {
+  background-color: white;
+  border-radius: 8px;
+  border: solid;
+  border-color: red;
+  border-width: 3px;
+  width: 95px;
+
+  padding: 3px 0px;
+
+  font-size: 18px;
+  color: red;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.saw-card__delete-button:hover {
+  background-color: red;
+  color: white;
+}

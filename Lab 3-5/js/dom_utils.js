@@ -16,10 +16,14 @@ const sawTemplate = ({ id, materialToSaw, driveType, sawMaterial, user, lengthIn
       <h5 class="saw-card__body__title">Saw №${id}</h5>
       <p class="saw-card__body__paragraph">Material to saw: ${materialToSaw}</p>
       <p class="saw-card__body__paragraph">Drive type: ${driveType}</p>
-      <p class="saw-card__body__paragraph">Saw handle material: ${sawMaterial.handleMaterial}</p>
-      <p class="saw-card__body__paragraph">Saw blade material: ${sawMaterial.bladeMaterial}</p>
+      <p class="saw-card__body__paragraph">Handle material: ${sawMaterial.handleMaterial}</p>
+      <p class="saw-card__body__paragraph">Blade material: ${sawMaterial.bladeMaterial}</p>
       <p class="saw-card__body__paragraph">User: ${user.name}, ${user.age} y.o.</p>
       <p class="saw-card__body__paragraph">Length: ${lengthInCm} cm</p>
+    </div>
+    <div class="saw-card__buttons">
+      <button class="saw-card__edit-button id="edit_button_${id}>Edit</button>
+      <button class="saw-card__delete-button id="delete_button_${id}>Delete</button>
     </div>
   </div>
 `;
