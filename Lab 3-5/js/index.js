@@ -15,7 +15,7 @@ let saw1 = {
 };
 let saw2 = {
   id: 2,
-  materialToSaw: "WOOD",
+  materialToSaw: "METAL",
   driveType: "MECHANICAL",
   sawMaterial: { handleMaterial: "plastic", bladeMaterial: "metal" },
   user: { name: "Max", age: 18 },
@@ -31,14 +31,14 @@ let saw3 = {
 };
 let saw4 = {
   id: 4,
-  materialToSaw: "WOOD",
+  materialToSaw: "METAL",
   driveType: "MECHANICAL",
   sawMaterial: { handleMaterial: "plastic", bladeMaterial: "metal" },
   user: { name: "Max", age: 18 },
-  lengthInCm: 4,
+  lengthInCm: 14,
 };
-let saws = [saw1, saw2, saw3, saw4, saw1, saw1, saw1, saw1, saw1, saw1];
-let current_saws = saws;
+let saws = [saw1, saw2, saw3, saw4, saw1, saw2, saw3, saw4, saw1, saw1];
+let current_saws = [...saws];
 
 window.onload = renderSawList(current_saws);
 
@@ -46,16 +46,20 @@ function test() {
   console.log("OK");
 }
 
-searchButton.addEventListener("click", () => {
-  test();
-});
+searchButton.addEventListener("click", () => {});
 
 sortAscButton.addEventListener("click", () => {
-  test();
+  current_saws = current_saws.sort(function (a, b) {
+    return b.lengthInCm - a.lengthInCm;
+  });
+  renderSawList(current_saws);
 });
 
 sortDescButton.addEventListener("click", () => {
-  test();
+  current_saws = current_saws.sort(function (a, b) {
+    return a.lengthInCm - b.lengthInCm;
+  });
+  renderSawList(current_saws);
 });
 
 countButton.addEventListener("click", () => {
