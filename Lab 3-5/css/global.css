@@ -1,0 +1,15 @@
+body {
+  font-family: Avenir, sans-serif;
+  background-color: rgba(53, 218, 53, 0.25);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: none;
+}

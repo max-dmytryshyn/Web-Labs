@@ -1,0 +1,118 @@
+main {
+  padding-top: 37.5px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.saws-managment {
+  width: 300px;
+  height: 100%;
+  padding: 15px;
+  position: fixed;
+  left: 110px;
+
+  border-right: solid;
+  border-color: green;
+  border-width: 7.5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.saws-managment hr {
+  width: 300px;
+  margin: 22.5px;
+}
+
+.saws-managment > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.saws-managment__sorting__asc {
+  width: 220px;
+  background-color: white;
+  border-radius: 6px;
+  border: solid;
+  border-color: blue;
+  border-width: 2.25px;
+
+  margin-left: 3.75px;
+  margin-right: 7.5px;
+  padding: 3.75px 18.75px;
+
+  font-size: 18px;
+  color: blue;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.saws-managment__sorting__asc:hover {
+  background-color: blue;
+  color: white;
+}
+
+.saws-managment__sorting__desc {
+  width: 220px;
+  background-color: white;
+  border-radius: 6px;
+  border: solid;
+  border-color: red;
+  border-width: 2.25px;
+
+  margin-left: 3.75px;
+  margin-right: 7.5px;
+  margin-top: 9px;
+  padding: 3.75px 18.75px;
+
+  font-size: 18px;
+  color: red;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.saws-managment__sorting__desc:hover {
+  background-color: red;
+  color: white;
+}
+
+.saws-managment__count__button {
+  width: 150px;
+  background-color: white;
+  border-radius: 6px;
+  border: solid;
+  border-color: green;
+  border-width: 2.25px;
+
+  margin-left: 3.75px;
+  margin-right: 7.5px;
+  margin-top: 3.75px;
+  padding: 3.75px 18.75px;
+
+  font-size: 18px;
+  color: green;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.saws-managment__count__button:hover {
+  background-color: green;
+  color: white;
+}
+
+.saws-managment__count__display {
+  margin-top: 11.25px;
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.saws-display {
+  width: 775px;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
