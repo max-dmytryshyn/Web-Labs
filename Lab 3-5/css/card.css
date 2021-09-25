@@ -1,19 +1,19 @@
 .saw-card {
-  margin: 6.5px;
-  padding: 10px;
+  margin: 4.875px;
+  padding: 15px;
   background-color: green;
-  border-radius: 10px;
+  border-radius: 7.5px;
 
   color: white;
 }
 
 .saw-card__body__title {
-  font-size: 20px;
-  margin: 5px 0px;
+  font-size: 17px;
+  margin: 3.75px 0px;
 }
 
 .saw-card__body__paragraph {
-  font-size: 16px;
+  font-size: 15px;
   margin: 10px 0px;
 }
 
@@ -24,15 +24,15 @@
 
 .saw-card__edit-button {
   background-color: white;
-  border-radius: 8px;
+  border-radius: 6px;
   border: solid;
   border-color: blue;
-  border-width: 3px;
-  width: 95px;
+  border-width: 2.25px;
+  width: 90px;
 
-  padding: 3px 0px;
+  padding: 5px 0px;
 
-  font-size: 18px;
+  font-size: 13.5px;
   color: blue;
 
   transition: background-color 0.3s, color 0.3s;
@@ -45,15 +45,15 @@
 
 .saw-card__delete-button {
   background-color: white;
-  border-radius: 8px;
+  border-radius: 6px;
   border: solid;
   border-color: red;
-  border-width: 3px;
-  width: 95px;
+  border-width: 2.25px;
+  width: 90px;
 
-  padding: 3px 0px;
+  padding: 5px 0px;
 
-  font-size: 18px;
+  font-size: 13.5px;
   color: red;
 
   transition: background-color 0.3s, color 0.3s;
