@@ -1,7 +1,7 @@
 const sawsContainer = document.getElementById("saws_list");
 const totalLengthDisplay = document.getElementById("total_length");
 
-const getSawId = (id) => `saw-${id}`;
+const getSawId = (id) => `saw_${id}`;
 
 const sawTemplate = ({ id, materialToSaw, driveType, sawMaterial, user, lengthInCm }) =>
   `
@@ -22,8 +22,8 @@ const sawTemplate = ({ id, materialToSaw, driveType, sawMaterial, user, lengthIn
       <p class="saw-card__body__paragraph">Length: ${lengthInCm} cm</p>
     </div>
     <div class="saw-card__buttons">
-      <button class="saw-card__edit-button id="edit_button_${id}>Edit</button>
-      <button class="saw-card__delete-button id="delete_button_${id}>Delete</button>
+      <button class="saw-card__edit-button" id="edit_button_${getSawId(id)}">Edit</button>
+      <button class="saw-card__delete-button" id="delete_button_${getSawId(id)}">Delete</button>
     </div>
   </div>
 `;

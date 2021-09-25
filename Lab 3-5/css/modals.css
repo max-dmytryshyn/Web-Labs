@@ -31,6 +31,8 @@
   cursor: pointer;
 }
 
+/*---------------------------------------------create saw modal---------------------------------------------*/
+
 .modal-create-saw__content {
   width: 1000px;
   margin: 1.5% auto;
@@ -109,9 +111,87 @@ select {
   color: white;
 }
 
-.modal-edit-saw {
-  display: none;
+/*---------------------------------------------edit saw modal----------------------------------------------*/
+
+.modal-edit-saw__content {
+  width: 1000px;
+  margin: 1.5% auto;
+  border-radius: 10px;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
 }
+
+.modal-edit-saw__header {
+  background-color: rgb(20, 117, 20);
+  height: 60px;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+.modal-edit-saw__body {
+  padding-top: 40px;
+  padding-bottom: 70px;
+  background-color: rgba(53, 218, 53, 0.25);
+  display: flex;
+  justify-content: center;
+}
+
+.modal-edit-saw__body__form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-edit-saw__body__form > input,
+select {
+  margin-bottom: 10px;
+  margin-top: 2px;
+
+  border-radius: 5px;
+  border-color: green;
+  border-width: 2px;
+  border-style: solid;
+
+  height: 40px;
+}
+
+.modal-edit-saw__body__form > label {
+  color: rgb(8, 73, 11);
+  font-weight: bold;
+}
+
+.modal-edit-saw__body__form__button {
+  width: 300px;
+  height: 40px;
+  background-color: white;
+  border-radius: 6px;
+  border: solid;
+  border-color: blue;
+  border-width: 2.25px;
+
+  align-self: center;
+  margin-top: 20px;
+  padding: 3.75px 18.75px;
+
+  font-size: 18px;
+  color: blue;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.modal-edit-saw__body__form__button:hover {
+  background-color: blue;
+  color: white;
+}
+
+/*---------------------------------------------delete saw modal----------------------------------------------*/
 
 .modal-delete-saw {
   display: none;

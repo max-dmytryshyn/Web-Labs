@@ -7,9 +7,12 @@ const closeCreateSawWindowButton = document.getElementById("close_create_saw_win
 const searchButton = document.getElementById("search_button");
 const cancelSearchButton = document.getElementById("cancel_search_button");
 const searchInput = document.getElementById("search_input");
+const editSawWindow = document.getElementById("edit_saw_window");
+const closeEditSawWindowButton = document.getElementById("close_edit_saw_window_button");
 const sortAscButton = document.getElementById("sort_asc_button");
 const sortDescButton = document.getElementById("sort_desc_button");
 const countButton = document.getElementById("count_button");
+
 //Sample saws array
 let saw1 = {
   id: 1,
@@ -43,10 +46,12 @@ let saw4 = {
   user: { name: "Max", age: 18 },
   lengthInCm: 14,
 };
+
 let saws = [saw1, saw2, saw3, saw4, saw1, saw2, saw3, saw4, saw1, saw1];
 let currentSaws = [...saws];
 
 window.onload = renderSawList(currentSaws);
+const editButton = document.getElementsByClassName("saw-card__edit-button");
 
 createSawButton.addEventListener("click", () => {
   openModalWindow(createSawWindow);
@@ -54,6 +59,17 @@ createSawButton.addEventListener("click", () => {
 
 closeCreateSawWindowButton.addEventListener("click", () => {
   closeModalWindow(createSawWindow);
+});
+
+for (let button of editButton) {
+  console.log(button);
+  button.addEventListener("click", () => {
+    openModalWindow(editSawWindow);
+  });
+}
+
+closeEditSawWindowButton.addEventListener("click", () => {
+  closeModalWindow(editSawWindow);
 });
 
 searchButton.addEventListener("click", () => {
