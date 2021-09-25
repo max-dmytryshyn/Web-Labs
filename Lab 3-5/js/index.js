@@ -53,6 +53,10 @@ let currentSaws = [...saws];
 window.onload = renderSawList(currentSaws);
 const editButton = document.getElementsByClassName("saw-card__edit-button");
 
+showAllSawsButton.addEventListener("click", () => {
+  currentSaws = [...saws];
+  renderSawList(currentSaws);
+});
 createSawButton.addEventListener("click", () => {
   openModalWindow(createSawWindow);
 });
@@ -72,13 +76,13 @@ closeEditSawWindowButton.addEventListener("click", () => {
   closeModalWindow(editSawWindow);
 });
 
-searchButton.addEventListener("click", () => {
+searchButton.addEventListener("click", (event) => {
   event.preventDefault();
   currentSaws = saws.filter((saw) => saw.materialToSaw.includes(searchInput.value.toUpperCase()));
   renderSawList(currentSaws);
 });
 
-cancelSearchButton.addEventListener("click", () => {
+cancelSearchButton.addEventListener("click", (event) => {
   event.preventDefault();
   currentSaws = [...saws];
   searchInput.value = "";
