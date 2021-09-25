@@ -193,6 +193,86 @@ select {
 
 /*---------------------------------------------delete saw modal----------------------------------------------*/
 
-.modal-delete-saw {
-  display: none;
+.modal-delete-saw__content {
+  width: 700px;
+  margin: 15% auto;
+  border-radius: 10px;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-delete-saw__header {
+  background-color: rgb(20, 117, 20);
+  height: 60px;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+.modal-delete-saw__body {
+  padding-top: 40px;
+  padding-bottom: 70px;
+  background-color: rgba(53, 218, 53, 0.25);
+  display: flex;
+  justify-content: center;
+}
+
+.modal-delete-saw__body__buttons {
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-delete-saw__body__cancel-button {
+  width: 275px;
+  height: 80px;
+  background-color: white;
+  border-radius: 6px;
+  border: solid;
+  border-color: red;
+  border-width: 2.25px;
+
+  align-self: center;
+  margin-top: 20px;
+  padding: 3.75px 18.75px;
+
+  font-size: 30px;
+  color: red;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.modal-delete-saw__body__cancel-button:hover {
+  background-color: red;
+  color: white;
+}
+
+.modal-delete-saw__body__confirm-button {
+  width: 275px;
+  height: 80px;
+  background-color: white;
+  border-radius: 6px;
+  border: solid;
+  border-color: blue;
+  border-width: 2.25px;
+
+  align-self: center;
+  margin-top: 20px;
+  padding: 3.75px 18.75px;
+
+  font-size: 30px;
+  color: blue;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.modal-delete-saw__body__confirm-button:hover {
+  background-color: blue;
+  color: white;
 }

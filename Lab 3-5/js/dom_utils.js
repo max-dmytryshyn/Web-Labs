@@ -1,5 +1,7 @@
 const sawsContainer = document.getElementById("saws_list");
 const totalLengthDisplay = document.getElementById("total_length");
+const editSawWindow = document.getElementById("edit_saw_window");
+const deleteSawWindow = document.getElementById("delete_saw_window");
 
 const getSawId = (id) => `saw_${id}`;
 
@@ -57,4 +59,19 @@ export const openModalWindow = (modalWindow) => {
 
 export const closeModalWindow = (modalWindow) => {
   modalWindow.style.display = "none";
+};
+
+export const renderButtons = () => {
+  let editButtons = document.getElementsByClassName("saw-card__edit-button");
+  for (let button of editButtons) {
+    button.addEventListener("click", () => {
+      openModalWindow(editSawWindow);
+    });
+  }
+  let deleteButtons = document.getElementsByClassName("saw-card__delete-button");
+  for (let button of deleteButtons) {
+    button.addEventListener("click", () => {
+      openModalWindow(deleteSawWindow);
+    });
+  }
 };
