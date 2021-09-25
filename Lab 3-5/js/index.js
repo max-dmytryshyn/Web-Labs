@@ -1,4 +1,9 @@
-import { renderSawList, countTotalLength } from "./dom_utils.js";
+import { renderSawList, countTotalLength, openModalWindow, closeModalWindow } from "./dom_utils.js";
+const showAllSawsButton = document.getElementById("show_all_saws_button");
+const createSawButton = document.getElementById("create_saw_button");
+const createSawWindow = document.getElementById("create_saw_window");
+const confirmSawCreationButton = document.getElementById("confirm_saw_creation_button");
+const closeCreateSawWindowButton = document.getElementById("close_create_saw_window_button");
 const searchButton = document.getElementById("search_button");
 const cancelSearchButton = document.getElementById("cancel_search_button");
 const searchInput = document.getElementById("search_input");
@@ -42,6 +47,14 @@ let saws = [saw1, saw2, saw3, saw4, saw1, saw2, saw3, saw4, saw1, saw1];
 let currentSaws = [...saws];
 
 window.onload = renderSawList(currentSaws);
+
+createSawButton.addEventListener("click", () => {
+  openModalWindow(createSawWindow);
+});
+
+closeCreateSawWindowButton.addEventListener("click", () => {
+  closeModalWindow(createSawWindow);
+});
 
 searchButton.addEventListener("click", () => {
   event.preventDefault();

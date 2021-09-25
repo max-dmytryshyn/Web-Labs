@@ -1,0 +1,118 @@
+.modal {
+  position: fixed;
+  display: none;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__close-button {
+  position: absolute;
+  right: 15px;
+  top: 4px;
+
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+
+  transition: 0.3s color;
+}
+
+.modal__close-button:hover,
+.modal__close-button:focus {
+  color: rgb(238, 83, 83);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-create-saw__content {
+  width: 1000px;
+  margin: 1.5% auto;
+  border-radius: 10px;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-create-saw__header {
+  background-color: rgb(20, 117, 20);
+  height: 60px;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+.modal-create-saw__body {
+  padding-top: 40px;
+  padding-bottom: 70px;
+  background-color: rgba(53, 218, 53, 0.25);
+  display: flex;
+  justify-content: center;
+}
+
+.modal-create-saw__body__form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-create-saw__body__form > input,
+select {
+  margin-bottom: 10px;
+  margin-top: 2px;
+
+  border-radius: 5px;
+  border-color: green;
+  border-width: 2px;
+  border-style: solid;
+
+  height: 40px;
+}
+
+.modal-create-saw__body__form > label {
+  color: rgb(8, 73, 11);
+  font-weight: bold;
+}
+
+.modal-create-saw__body__form__button {
+  width: 300px;
+  height: 40px;
+  background-color: white;
+  border-radius: 6px;
+  border: solid;
+  border-color: blue;
+  border-width: 2.25px;
+
+  align-self: center;
+  margin-top: 20px;
+  padding: 3.75px 18.75px;
+
+  font-size: 18px;
+  color: blue;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.modal-create-saw__body__form__button:hover {
+  background-color: blue;
+  color: white;
+}
+
+.modal-edit-saw {
+  display: none;
+}
+
+.modal-delete-saw {
+  display: none;
+}

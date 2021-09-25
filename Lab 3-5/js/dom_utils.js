@@ -50,3 +50,11 @@ export const renderSawList = (saws) => {
     addSawToPage(saw);
   }
 };
+
+export const openModalWindow = (modalWindow) => {
+  modalWindow.style.display = "block";
+};
+
+export const closeModalWindow = (modalWindow) => {
+  modalWindow.style.display = "none";
+};

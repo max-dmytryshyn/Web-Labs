@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 3</title>
+    <title>Lab 4</title>
 
     <!-- My styles -->
     <link rel="stylesheet" href="css/styles.css" />
@@ -13,8 +13,8 @@
     <div class="container">
       <header>
         <nav class="actions-navigation">
-          <button>My Saws</button>
-          <button>Create Saw</button>
+          <button id="show_all_saws_button">My Saws</button>
+          <button id="create_saw_button">Create Saw</button>
         </nav>
         <div class="search-form">
           <form>
@@ -56,6 +56,44 @@
           </div>
           <div class="saws-display" id="saws_list"></div>
         </main>
+      </div>
+    </section>
+    <section>
+      <div id="create_saw_window" class="modal">
+        <div class="modal-create-saw__content">
+          <div class="modal-create-saw__header">
+            <h1>Create saw</h1>
+            <span id="close_create_saw_window_button" class="modal__close-button">&times;</span>
+          </div>
+          <div class="modal-create-saw__body">
+            <form class="modal-create-saw__body__form">
+              <label for="material_to_saw">Material to saw:</label>
+              <select name="materials to saw" id="">
+                <option value="WOOD">WOOD</option>
+                <option value="METAL">METAL</option>
+              </select>
+              <label for="drives">Drive type:</label>
+              <select name="drives" id="">
+                <option value="MECHANICAL">MECHANICAL</option>
+                <option value="ELECTRIC">ELECTRIC</option>
+                <option value="INTERNAL_COMBUSTION_ENGINE">INTERNAL COMBUSTION ENGINE</option>
+              </select>
+              <label for="handle_material">Handle material:</label>
+              <input type="text" name="handle_material" />
+              <label for="blade_material">Blade material:</label>
+              <input type="text" name="blade_material" />
+              <label for="user_name">User name:</label>
+              <input type="text" name="user_name" />
+              <label for="user_age">User age:</label>
+              <input type="text" name="user_age" />
+              <label for="length">Length in cm:</label>
+              <input type="text" name="length" />
+              <button id="confirm_saw_creation_button" class="modal-create-saw__body__form__button">
+                Create
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
     <script type="module" src="js/index.js"></script>
