@@ -18,12 +18,7 @@
         </nav>
         <div class="search-form">
           <form>
-            <input
-              type="text"
-              class="search-form__text"
-              id="search_input"
-              placeholder="Input material to saw"
-            />
+            <input type="text" class="search-form__text" id="search_input" placeholder="Input material to saw" />
             <button class="search-form__search-button" id="search_button">Search</button>
             <button class="search-form__cancel-button" id="cancel_search_button">Cancel</button>
           </form>
@@ -37,12 +32,8 @@
             <h1>Manage saws</h1>
             <hr />
             <div class="saws-managment__sorting">
-              <button class="saws-managment__sorting__asc" id="sort_asc_button">
-                Sort by length in asc
-              </button>
-              <button class="saws-managment__sorting__desc" id="sort_desc_button">
-                Sort by length in desc
-              </button>
+              <button class="saws-managment__sorting__asc" id="sort_asc_button">Sort by length in asc</button>
+              <button class="saws-managment__sorting__desc" id="sort_desc_button">Sort by length in desc</button>
             </div>
             <hr />
             <div class="saws-managment__count">
@@ -66,31 +57,41 @@
             <span id="close_create_saw_window_button" class="modal__close-button">&times;</span>
           </div>
           <div class="modal-create-saw__body">
-            <form class="modal-create-saw__body__form">
+            <form id="create_saw_form" class="modal-create-saw__body__form">
               <label for="material_to_saw">Material to saw:</label>
               <select name="materials to saw" id="">
                 <option value="WOOD">WOOD</option>
                 <option value="METAL">METAL</option>
               </select>
+
               <label for="drives">Drive type:</label>
               <select name="drives" id="">
                 <option value="MECHANICAL">MECHANICAL</option>
                 <option value="ELECTRIC">ELECTRIC</option>
                 <option value="INTERNAL_COMBUSTION_ENGINE">INTERNAL COMBUSTION ENGINE</option>
               </select>
+
               <label for="handle_material">Handle material:</label>
-              <input type="text" name="handle_material" />
+              <input id="create_handle_material_input" type="text" name="handle_material" />
+              <p id="create_handle_material_input_error" class="error_text"></p>
+
               <label for="blade_material">Blade material:</label>
-              <input type="text" name="blade_material" />
+              <input id="create_blade_material_input" type="text" name="blade_material" />
+              <p id="create_blade_material_input_error" class="error_text"></p>
+
               <label for="user_name">User name:</label>
-              <input type="text" name="user_name" />
+              <input id="create_user_name_input" type="text" name="user_name" />
+              <p id="create_user_name_input_error" class="error_text"></p>
+
               <label for="user_age">User age:</label>
-              <input type="text" name="user_age" />
+              <input id="create_user_age_input" type="text" name="user_age" />
+              <p id="create_user_age_input_error" class="error_text"></p>
+
               <label for="length">Length in cm:</label>
-              <input type="text" name="length" />
-              <button id="confirm_saw_creation_button" class="modal-create-saw__body__form__button">
-                Create
-              </button>
+              <input id="create_length_input" type="text" name="length" />
+              <p id="create_length_input_error" class="error_text"></p>
+
+              <button id="confirm_saw_creation_button" class="modal-create-saw__body__form__button">Create</button>
             </form>
           </div>
         </div>
@@ -104,31 +105,41 @@
             <span id="close_edit_saw_window_button" class="modal__close-button">&times;</span>
           </div>
           <div class="modal-edit-saw__body">
-            <form class="modal-edit-saw__body__form">
+            <form id="edit_saw_form" class="modal-edit-saw__body__form">
               <label for="material_to_saw">Material to saw:</label>
               <select name="materials to saw" id="">
                 <option value="WOOD">WOOD</option>
                 <option value="METAL">METAL</option>
               </select>
               <label for="drives">Drive type:</label>
+
               <select name="drives" id="">
                 <option value="MECHANICAL">MECHANICAL</option>
                 <option value="ELECTRIC">ELECTRIC</option>
                 <option value="INTERNAL_COMBUSTION_ENGINE">INTERNAL COMBUSTION ENGINE</option>
               </select>
+
               <label for="handle_material">Handle material:</label>
-              <input type="text" name="handle_material" />
+              <input id="edit_handle_material_input" type="text" name="handle_material" />
+              <p id="edit_handle_material_input_error" class="error_text"></p>
+
               <label for="blade_material">Blade material:</label>
-              <input type="text" name="blade_material" />
+              <input id="edit_blade_material_input" type="text" name="blade_material" />
+              <p id="edit_blade_material_input_error" class="error_text"></p>
+
               <label for="user_name">User name:</label>
-              <input type="text" name="user_name" />
+              <input id="edit_user_name_input" type="text" name="user_name" />
+              <p id="edit_user_name_input_error" class="error_text"></p>
+
               <label for="user_age">User age:</label>
-              <input type="text" name="user_age" />
+              <input id="edit_user_age_input" type="text" name="user_age" />
+              <p id="edit_user_age_input_error" class="error_text"></p>
+
               <label for="length">Length in cm:</label>
-              <input type="text" name="length" />
-              <button id="confirm_saw_creation_button" class="modal-edit-saw__body__form__button">
-                Save
-              </button>
+              <input id="edit_length_input" type="text" name="length" />
+              <p id="edit_length_input_error" class="error_text"></p>
+
+              <button id="confirm_saw_editing_button" class="modal-edit-saw__body__form__button">Save</button>
             </form>
           </div>
         </div>
@@ -143,8 +154,8 @@
           </div>
           <div class="modal-delete-saw__body">
             <div class="modal-delete-saw__body__buttons">
-              <button class="modal-delete-saw__body__cancel-button">Cancel</button>
-              <button class="modal-delete-saw__body__confirm-button">Confirm</button>
+              <button id="cancel_saw_deletion_button" class="modal-delete-saw__body__cancel-button">Cancel</button>
+              <button id="confirm_saw_deletion_button" class="modal-delete-saw__body__confirm-button">Confirm</button>
             </div>
           </div>
         </div>

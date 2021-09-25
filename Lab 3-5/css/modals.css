@@ -71,7 +71,6 @@
 
 .modal-create-saw__body__form > input,
 select {
-  margin-bottom: 10px;
   margin-top: 2px;
 
   border-radius: 5px;
@@ -83,6 +82,7 @@ select {
 }
 
 .modal-create-saw__body__form > label {
+  margin-top: 10px;
   color: rgb(8, 73, 11);
   font-weight: bold;
 }
@@ -151,7 +151,6 @@ select {
 
 .modal-edit-saw__body__form > input,
 select {
-  margin-bottom: 10px;
   margin-top: 2px;
 
   border-radius: 5px;
@@ -163,6 +162,7 @@ select {
 }
 
 .modal-edit-saw__body__form > label {
+  margin-top: 10px;
   color: rgb(8, 73, 11);
   font-weight: bold;
 }
@@ -275,4 +275,13 @@ select {
 .modal-delete-saw__body__confirm-button:hover {
   background-color: blue;
   color: white;
+}
+/*---------------------------------------------errors fields------------------------------------------------*/
+
+.error_text {
+  color: red;
+  font-size: 16px;
+  font-style: italic;
+  margin-top: 5px;
+  display: none;
 }
