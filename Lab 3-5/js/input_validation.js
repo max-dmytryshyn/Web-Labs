@@ -29,7 +29,6 @@ const validateTextInput = (text) => {
 };
 
 const validateNumberInput = (text) => {
-  text = text.trim();
   let point_char_counter = 0;
   for (var i = 0; i < text.length; i++) {
     if (text.charAt(i) < "0" || text.charAt(i) > "9") {
@@ -43,8 +42,39 @@ const validateNumberInput = (text) => {
   return true;
 };
 
+const trimTextField = (TextField) => {
+  TextField.value = String(TextField.value).trim();
+};
+
+const trimCreateSawForm = () => {
+  trimTextField(createHandleMaterialInput);
+  trimTextField(createHandleMaterialInputErrorField);
+  trimTextField(createBladeMaterialInput);
+  trimTextField(createBladeMaterialInputErrorField);
+  trimTextField(createUserNameInput);
+  trimTextField(createUserNameInputErrorField);
+  trimTextField(createUserAgeInput);
+  trimTextField(createUserAgeInputErrorField);
+  trimTextField(createLengthInput);
+  trimTextField(createLengthInputErrorField);
+};
+
+const trimEditSawForm = () => {
+  trimTextField(editHandleMaterialInput);
+  trimTextField(editHandleMaterialInputErrorField);
+  trimTextField(editBladeMaterialInput);
+  trimTextField(editBladeMaterialInputErrorField);
+  trimTextField(editUserNameInput);
+  trimTextField(editUserNameInputErrorField);
+  trimTextField(editUserAgeInput);
+  trimTextField(editUserAgeInputErrorField);
+  trimTextField(editLengthInput);
+  trimTextField(editLengthInputErrorField);
+};
+
 export const validateCreateSawForm = () => {
   let validated = true;
+  trimCreateSawForm();
   if (createHandleMaterialInput.value === "") {
     createHandleMaterialInputErrorField.textContent = "This field is required";
     createHandleMaterialInputErrorField.style.display = "block";
@@ -109,6 +139,7 @@ export const validateCreateSawForm = () => {
 };
 
 export const validateEditSawForm = () => {
+  trimEditSawForm();
   let validated = true;
   if (editHandleMaterialInput.value === "") {
     editHandleMaterialInputErrorField.textContent = "This field is required";
