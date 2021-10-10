@@ -14,7 +14,9 @@ const baseRequest = async ({ urlPath = "", method = "GET", body = null }) => {
       reqParams.body = JSON.stringify(body);
     }
     return await fetch(`${RESOURCE_URL}${urlPath}`, reqParams);
-  } catch (error) {}
+  } catch (error) {
+    console.error("HTTP ERROR: ", error);
+  }
 };
 
 export const getAllSaws = async () => {
@@ -24,3 +26,5 @@ export const getAllSaws = async () => {
 };
 
 export const postSaw = (body) => baseRequest({ method: "POST", body: body });
+
+export const deleteSaw = (id) => baseRequest({ urlPath: `/${id}`, method: "DELETE" });
