@@ -220,3 +220,26 @@ export const getCreateInputValues = () => {
     lengthInCm: parseFloat(createLengthInput.value),
   };
 };
+
+export const getEditInputValues = () => {
+  return {
+    materialToSaw: editMaterialToSawInput.value,
+    driveType: editDriveInput.value,
+    sawMaterial: {
+      handleMaterial: editHandleMaterialInput.value,
+      bladeMaterial: editBladeMaterialInput.value,
+    },
+    user: { name: editUserNameInput.value, age: parseFloat(editUserAgeInput.value) },
+    lengthInCm: parseFloat(editLengthInput.value),
+  };
+};
+
+export const setEditInputValues = ({ materialToSaw, driveType, sawMaterial, user, lengthInCm }) => {
+  editMaterialToSawInput.value = materialToSaw;
+  editDriveInput.value = driveType;
+  editHandleMaterialInput.value = sawMaterial.handleMaterial;
+  editBladeMaterialInput.value = sawMaterial.bladeMaterial;
+  editUserNameInput.value = user.name;
+  editUserAgeInput.value = user.age;
+  editLengthInput.value = lengthInCm;
+};

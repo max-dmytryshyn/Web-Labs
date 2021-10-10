@@ -27,4 +27,6 @@ export const getAllSaws = async () => {
 
 export const postSaw = (body) => baseRequest({ method: "POST", body: body });
 
+export const updateSaw = (id, body) => baseRequest({ urlPath: `/${id}`, method: "PUT", body: body });
+
 export const deleteSaw = (id) => baseRequest({ urlPath: `/${id}`, method: "DELETE" });

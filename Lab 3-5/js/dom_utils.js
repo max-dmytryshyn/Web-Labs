@@ -1,9 +1,5 @@
 const sawsContainer = document.getElementById("saws_list");
 const totalLengthDisplay = document.getElementById("total_length");
-const editSawWindow = document.getElementById("edit_saw_window");
-const editSawWindowHeaderText = document.getElementById("edit_saw_window_header_text");
-const deleteSawWindow = document.getElementById("delete_saw_window");
-const deleteSawWindowHeaderText = document.getElementById("delete_saw_window_header_text");
 
 const getSawId = (id) => `saw_${id}`;
 const EDIT_BUTTON_PREFIX = "edit_button_";
@@ -44,7 +40,11 @@ export const countTotalLength = (saws) => {
   totalLengthDisplay.textContent = `${totalLength} cm`;
 };
 
-const addSawToPage = ({ id, materialToSaw, driveType, sawMaterial, user, lengthInCm }, onDeleteSaw) => {
+const addSawToPage = (
+  { id, materialToSaw, driveType, sawMaterial, user, lengthInCm },
+  prepareDeleteSawWindow,
+  prepareUpdateSawWindow
+) => {
   sawsContainer.insertAdjacentHTML(
     "afterbegin",
     sawTemplate({ id, materialToSaw, driveType, sawMaterial, user, lengthInCm })
@@ -54,22 +54,19 @@ const addSawToPage = ({ id, materialToSaw, driveType, sawMaterial, user, lengthI
   const delete_button = document.getElementById(`${DELETE_BUTTON_PREFIX}${getSawId(id)}`);
 
   edit_button.addEventListener("click", () => {
-    editSawWindowHeaderText.textContent = `Edit saw №${id}`;
-    openModalWindow(editSawWindow);
+    prepareUpdateSawWindow(id);
   });
 
   delete_button.addEventListener("click", () => {
-    deleteSawWindowHeaderText.textContent = `Delete saw №${id}?`;
-    openModalWindow(deleteSawWindow);
-    onDeleteSaw(id);
+    prepareDeleteSawWindow(id);
   });
 };
 
-export const renderSawList = (saws, onDeleteSaw) => {
+export const renderSawList = (saws, prepareDeleteSawWindow, prepareUpdateSawWindow) => {
   sawsContainer.innerHTML = "";
 
   for (const saw of saws) {
-    addSawToPage(saw, onDeleteSaw);
+    addSawToPage(saw, prepareDeleteSawWindow, prepareUpdateSawWindow);
   }
 };
 
