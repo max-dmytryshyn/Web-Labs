@@ -1,7 +1,9 @@
 const sawsContainer = document.getElementById("saws_list");
 const totalLengthDisplay = document.getElementById("total_length");
+const editSawWindow = document.getElementById("edit_saw_window");
+const deleteSawWindow = document.getElementById("delete_saw_window");
 
-const getSawId = (id) => `saw-${id}`;
+const getSawId = (id) => `saw_${id}`;
 
 const sawTemplate = ({ id, materialToSaw, driveType, sawMaterial, user, lengthInCm }) =>
   `
@@ -22,8 +24,8 @@ const sawTemplate = ({ id, materialToSaw, driveType, sawMaterial, user, lengthIn
       <p class="saw-card__body__paragraph">Length: ${lengthInCm} cm</p>
     </div>
     <div class="saw-card__buttons">
-      <button class="saw-card__edit-button id="edit_button_${id}>Edit</button>
-      <button class="saw-card__delete-button id="delete_button_${id}>Delete</button>
+      <button class="saw-card__edit-button" id="edit_button_${getSawId(id)}">Edit</button>
+      <button class="saw-card__delete-button" id="delete_button_${getSawId(id)}">Delete</button>
     </div>
   </div>
 `;
@@ -48,5 +50,28 @@ export const renderSawList = (saws) => {
 
   for (const saw of saws) {
     addSawToPage(saw);
+  }
+};
+
+export const openModalWindow = (modalWindow) => {
+  modalWindow.style.display = "block";
+};
+
+export const closeModalWindow = (modalWindow) => {
+  modalWindow.style.display = "none";
+};
+
+export const renderButtons = () => {
+  let editButtons = document.getElementsByClassName("saw-card__edit-button");
+  for (let button of editButtons) {
+    button.addEventListener("click", () => {
+      openModalWindow(editSawWindow);
+    });
+  }
+  let deleteButtons = document.getElementsByClassName("saw-card__delete-button");
+  for (let button of deleteButtons) {
+    button.addEventListener("click", () => {
+      openModalWindow(deleteSawWindow);
+    });
   }
 };
