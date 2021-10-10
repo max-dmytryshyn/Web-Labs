@@ -1,5 +1,6 @@
 import { renderSawList, countTotalLength, openModalWindow, closeModalWindow, renderButtons } from "./dom_utils.js";
 import { validateCreateSawForm, validateEditSawForm } from "./input_validation.js";
+import { getAllSaws } from "./api.js";
 
 const showAllSawsButton = document.getElementById("show_all_saws_button");
 
@@ -27,49 +28,18 @@ const confirmSawDeletionButton = document.getElementById("confirm_saw_deletion_b
 const cancelSawDeletionButton = document.getElementById("cancel_saw_deletion_button");
 const closeDeleteSawWindowButton = document.getElementById("close_delete_saw_window_button");
 
-//Sample saws array
-let saw1 = {
-  id: 1,
-  materialToSaw: "WOOD",
-  driveType: "MECHANICAL",
-  sawMaterial: { handleMaterial: "plastic", bladeMaterial: "metal" },
-  user: { name: "Max", age: 18 },
-  lengthInCm: 1,
-};
-let saw2 = {
-  id: 2,
-  materialToSaw: "METAL",
-  driveType: "MECHANICAL",
-  sawMaterial: { handleMaterial: "plastic", bladeMaterial: "metal" },
-  user: { name: "Max", age: 18 },
-  lengthInCm: 2,
-};
-let saw3 = {
-  id: 3,
-  materialToSaw: "WOOD",
-  driveType: "MECHANICAL",
-  sawMaterial: { handleMaterial: "plastic", bladeMaterial: "metal" },
-  user: { name: "Max", age: 18 },
-  lengthInCm: 3,
-};
-let saw4 = {
-  id: 4,
-  materialToSaw: "METAL",
-  driveType: "MECHANICAL",
-  sawMaterial: { handleMaterial: "plastic", bladeMaterial: "metal" },
-  user: { name: "Max", age: 18 },
-  lengthInCm: 14,
+let saws = [];
+
+const refetchAllSaws = async () => {
+  saws = await getAllSaws();
+  renderSawList(saws);
 };
 
-let saws = [saw1, saw2, saw3, saw4, saw1, saw2, saw3, saw4, saw1, saw1];
-let currentSaws = [...saws];
-
-window.onload = renderSawList(currentSaws);
+window.onload = refetchAllSaws();
 renderButtons();
 
 showAllSawsButton.addEventListener("click", () => {
-  currentSaws = [...saws];
-  renderSawList(currentSaws);
+  refetchAllSaws();
   renderButtons();
 });
 
@@ -113,37 +83,37 @@ closeDeleteSawWindowButton.addEventListener("click", () => {
   closeModalWindow(deleteSawWindow);
 });
 
-searchButton.addEventListener("click", (event) => {
+searchButton.addEventListener("click", async (event) => {
   event.preventDefault();
-  currentSaws = saws.filter((saw) => saw.materialToSaw.includes(searchInput.value.toUpperCase()));
-  renderSawList(currentSaws);
+  saws = await getAllSaws();
+  saws = saws.filter((saw) => saw.materialToSaw.includes(searchInput.value.toUpperCase()));
+  renderSawList(saws);
   renderButtons();
 });
 
 cancelSearchButton.addEventListener("click", (event) => {
   event.preventDefault();
-  currentSaws = [...saws];
   searchInput.value = "";
-  renderSawList(currentSaws);
+  refetchAllSaws();
   renderButtons();
 });
 
 sortAscButton.addEventListener("click", () => {
-  currentSaws = currentSaws.sort((a, b) => {
+  saws = saws.sort((a, b) => {
     return b.lengthInCm - a.lengthInCm;
   });
-  renderSawList(currentSaws);
+  renderSawList(saws);
   renderButtons();
 });
 
 sortDescButton.addEventListener("click", () => {
-  currentSaws = currentSaws.sort(function (a, b) {
+  saws = saws.sort(function (a, b) {
     return a.lengthInCm - b.lengthInCm;
   });
-  renderSawList(currentSaws);
+  renderSawList(saws);
   renderButtons();
 });
 
 countButton.addEventListener("click", () => {
-  countTotalLength(currentSaws);
+  countTotalLength(saws);
 });
