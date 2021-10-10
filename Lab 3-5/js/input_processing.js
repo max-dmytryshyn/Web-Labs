@@ -1,3 +1,5 @@
+const createMaterialToSawInput = document.getElementById("create_material_to_saw_input");
+const createDriveInput = document.getElementById("create_drive_input");
 const createHandleMaterialInput = document.getElementById("create_handle_material_input");
 const createHandleMaterialInputErrorField = document.getElementById("create_handle_material_input_error");
 const createBladeMaterialInput = document.getElementById("create_blade_material_input");
@@ -9,6 +11,8 @@ const createUserAgeInputErrorField = document.getElementById("create_user_age_in
 const createLengthInput = document.getElementById("create_length_input");
 const createLengthInputErrorField = document.getElementById("create_length_input_error");
 
+const editMaterialToSawInput = document.getElementById("edit_material_to_saw_input");
+const editDriveInput = document.getElementById("edit_drive_input");
 const editHandleMaterialInput = document.getElementById("edit_handle_material_input");
 const editHandleMaterialInputErrorField = document.getElementById("edit_handle_material_input_error");
 const editBladeMaterialInput = document.getElementById("edit_blade_material_input");
@@ -202,4 +206,17 @@ export const validateEditSawForm = () => {
   }
 
   return validated;
+};
+
+export const getCreateInputValues = () => {
+  return {
+    materialToSaw: createMaterialToSawInput.value,
+    driveType: createDriveInput.value,
+    sawMaterial: {
+      handleMaterial: createHandleMaterialInput.value,
+      bladeMaterial: createBladeMaterialInput.value,
+    },
+    user: { name: createUserNameInput.value, age: parseFloat(createUserAgeInput.value) },
+    lengthInCm: parseFloat(createLengthInput.value),
+  };
 };

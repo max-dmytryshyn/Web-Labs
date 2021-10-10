@@ -5,7 +5,7 @@ const baseRequest = async ({ urlPath = "", method = "GET", body = null }) => {
   try {
     const reqParams = {
       method,
-      header: {
+      headers: {
         "Content-Type": "application/json",
       },
     };
@@ -23,4 +23,4 @@ export const getAllSaws = async () => {
   return rawRes.json();
 };
 
-export const postSaw = (body) => baseRequest({ method: "POST", body });
+export const postSaw = (body) => baseRequest({ method: "POST", body: body });

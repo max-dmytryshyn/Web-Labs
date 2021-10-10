@@ -1,6 +1,6 @@
 import { renderSawList, countTotalLength, openModalWindow, closeModalWindow, renderButtons } from "./dom_utils.js";
-import { validateCreateSawForm, validateEditSawForm } from "./input_validation.js";
-import { getAllSaws } from "./api.js";
+import { validateCreateSawForm, validateEditSawForm, getCreateInputValues } from "./input_processing.js";
+import { getAllSaws, postSaw } from "./api.js";
 
 const showAllSawsButton = document.getElementById("show_all_saws_button");
 
@@ -47,11 +47,13 @@ createSawButton.addEventListener("click", () => {
   openModalWindow(createSawWindow);
 });
 
-confirmSawCreationButton.addEventListener("click", (event) => {
+confirmSawCreationButton.addEventListener("click", async (event) => {
   event.preventDefault();
   if (validateCreateSawForm()) {
+    await postSaw(getCreateInputValues());
     closeModalWindow(createSawWindow);
     createSawForm.reset();
+    refetchAllSaws();
   }
 });
 
