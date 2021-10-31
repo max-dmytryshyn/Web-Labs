@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 4</title>
+    <title>Lab 5</title>
 
     <!-- My styles -->
     <link rel="stylesheet" href="css/styles.css" />
@@ -59,13 +59,13 @@
           <div class="modal-create-saw__body">
             <form id="create_saw_form" class="modal-create-saw__body__form">
               <label for="material_to_saw">Material to saw:</label>
-              <select name="materials to saw" id="">
+              <select name="material_to_saw" id="create_material_to_saw_input">
                 <option value="WOOD">WOOD</option>
                 <option value="METAL">METAL</option>
               </select>
 
               <label for="drives">Drive type:</label>
-              <select name="drives" id="">
+              <select name="drives" id="create_drive_input">
                 <option value="MECHANICAL">MECHANICAL</option>
                 <option value="ELECTRIC">ELECTRIC</option>
                 <option value="INTERNAL_COMBUSTION_ENGINE">INTERNAL COMBUSTION ENGINE</option>
@@ -101,19 +101,19 @@
       <div id="edit_saw_window" class="modal">
         <div class="modal-edit-saw__content">
           <div class="modal-edit-saw__header">
-            <h1>Edit saw</h1>
+            <h1 id="edit_saw_window_header_text">Edit saw</h1>
             <span id="close_edit_saw_window_button" class="modal__close-button">&times;</span>
           </div>
           <div class="modal-edit-saw__body">
             <form id="edit_saw_form" class="modal-edit-saw__body__form">
               <label for="material_to_saw">Material to saw:</label>
-              <select name="materials to saw" id="">
+              <select name="material_to_saw" id="edit_material_to_saw_input">
                 <option value="WOOD">WOOD</option>
                 <option value="METAL">METAL</option>
               </select>
-              <label for="drives">Drive type:</label>
 
-              <select name="drives" id="">
+              <label for="drives">Drive type:</label>
+              <select name="drives" id="edit_drive_input">
                 <option value="MECHANICAL">MECHANICAL</option>
                 <option value="ELECTRIC">ELECTRIC</option>
                 <option value="INTERNAL_COMBUSTION_ENGINE">INTERNAL COMBUSTION ENGINE</option>
@@ -149,7 +149,7 @@
       <div id="delete_saw_window" class="modal">
         <div class="modal-delete-saw__content">
           <div class="modal-delete-saw__header">
-            <h1>Delete saw?</h1>
+            <h1 id="delete_saw_window_header_text">Delete saw?</h1>
             <span id="close_delete_saw_window_button" class="modal__close-button">&times;</span>
           </div>
           <div class="modal-delete-saw__body">
