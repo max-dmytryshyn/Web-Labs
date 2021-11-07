@@ -5,6 +5,7 @@ import electricSawImage from "./images/electric_saw.jpg";
 import jigSawImage from "./images/jig_saw.jpg";
 import { Item } from "./Item.jsx";
 import { MainItem } from "./MainItem";
+import { Button } from "../../Button";
 
 export const Main = () => {
   return (
@@ -59,7 +60,7 @@ export const Main = () => {
         />
       </div>
       <div className="view_more">
-        <button className="view_more__button">View more</button>
+        <Button className="view_more__button" label="View more" />
       </div>
     </main>
   );

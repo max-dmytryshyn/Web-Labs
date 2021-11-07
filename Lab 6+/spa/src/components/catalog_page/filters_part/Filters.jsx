@@ -1,5 +1,6 @@
-import { Filter } from "./Filter";
 import "./Filters.css";
+import { Filter } from "./Filter";
+import { Button } from "../../Button";
 
 export const Filters = () => {
   return (
@@ -33,7 +34,7 @@ export const Filters = () => {
           />
         </form>
       </div>
-      <button className="filters__button">Apply</button>
+      <Button className="filters__button" label="Apply" />
     </div>
   );
 };
