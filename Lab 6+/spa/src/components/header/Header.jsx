@@ -11,6 +11,11 @@ export const Header = (props) => {
         <HeaderItem label="Catalog" path="/catalog" />
         <HeaderItem label="Cart" path="/cart" />
       </ul>
+      {props.isSearchEnabled && (
+        <form class="header__search_form">
+          <input type="text" class="header__search_form__text" id="search_input" />
+        </form>
+      )}
     </header>
   );
 };
