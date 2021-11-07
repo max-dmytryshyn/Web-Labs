@@ -1,19 +1,15 @@
 import "./Header.css";
+import { HeaderItem } from "./HeaderItem";
+import { Logo } from "../Logo/Logo";
 
-export const Header = () => {
+export const Header = (props) => {
   return (
     <header className="header">
-      <img src="./images/logo.svg" className="header__logo" alt="logo" />
+      <Logo parentName="header" />
       <ul className="header__nav">
-        <li className="header__nav__item">
-          <a href="">Home</a>
-        </li>
-        <li className="header__nav__item">
-          <a href="">Catalog</a>
-        </li>
-        <li className="header__nav__item">
-          <a href="">Cart</a>
-        </li>
+        <HeaderItem label="Home" path="/" />
+        <HeaderItem label="Catalog" path="/catalog" />
+        <HeaderItem label="Cart" path="/cart" />
       </ul>
     </header>
   );

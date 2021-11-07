@@ -1,4 +1,6 @@
 import "./Footer.css";
+import { Logo } from "../Logo/Logo";
+import { FooterSocialMediaItem } from "./FooterSocialMediaItem";
 import facebookIcon from "./images/facebook_icon.png";
 import googleIcon from "./images/google_icon.png";
 import linkedinIcon from "./images/linkedin_icon.png";
@@ -12,22 +14,12 @@ export const Footer = () => {
           <h3 className="branding__header">Saw shop</h3>
           <p className="branding__paragraph">By the best saws on our site!</p>
         </div>
-        <div className="footer__logo">
-          <img src="./images/logo.svg" alt="logo" className="footer__logo_img" />
-        </div>
+        <Logo parentName="footer" />
         <div className="social_media">
-          <a href="">
-            <img src={facebookIcon} alt="social media icon" className="social_media__icon" />
-          </a>
-          <a href="">
-            <img src={twitterIcon} alt="social media icon" className="social_media__icon" />
-          </a>
-          <a href="">
-            <img src={linkedinIcon} alt="social media icon" className="social_media__icon" />
-          </a>
-          <a href="">
-            <img src={googleIcon} alt="social media icon" className="social_media__icon" />
-          </a>
+          <FooterSocialMediaItem src={facebookIcon} link="https://www.facebook.com/" />
+          <FooterSocialMediaItem src={twitterIcon} link="https://twitter.com/" />
+          <FooterSocialMediaItem src={linkedinIcon} link="https://www.linkedin.com/" />
+          <FooterSocialMediaItem src={googleIcon} link="https://myaccount.google.com/" />
         </div>
       </div>
       <hr className="footer__diving_line" />
