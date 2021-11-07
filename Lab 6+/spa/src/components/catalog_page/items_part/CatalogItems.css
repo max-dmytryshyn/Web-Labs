@@ -1,0 +1,11 @@
+.catalog_items_list {
+  display: none;
+  margin: 0px 15px;
+  padding: 15px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  border-bottom: solid;
+  border-color: black;
+  border-width: 2px;
+}
