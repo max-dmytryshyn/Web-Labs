@@ -3,14 +3,14 @@ import mainSawImage from "./images/main_saw.jpg";
 import chainsawImage from "./images/chainsaw.jpg";
 import electricSawImage from "./images/electric_saw.jpg";
 import jigSawImage from "./images/jig_saw.jpg";
-import { Item } from "./Item.jsx";
-import { MainItem } from "./MainItem";
+import { HomepageItem } from "./HomepageItem.jsx";
+import { HomepageMainItem } from "./HomepageMainItem";
 import { Button } from "../../Button";
 
 export const Main = () => {
   return (
     <main className="main">
-      <MainItem
+      <HomepageMainItem
         image_src={mainSawImage}
         heading="Professional Hand Saw Tuftul TUF1015A"
         content="Tuftul concrete cutter saw plastic handle with soft grip for better comfort and control. Black phosphate
@@ -25,7 +25,7 @@ export const Main = () => {
       />
 
       <div className="items">
-        <Item
+        <HomepageItem
           image_src={chainsawImage}
           heading="WEN 4017 16-Inch Electric Chainsaw"
           content="Remember when you could cut down trees without wasting a single drop of gasoline? The WEN 16-Inch Electric
@@ -35,7 +35,7 @@ export const Main = () => {
         into the power source of your choice and start chopping."
         />
 
-        <Item
+        <HomepageItem
           image_src={electricSawImage}
           heading="7 Inch Electric Circular Saw"
           content="High-power multifunctional electric circular saw for fast cutting. Low running noise, fast cutting speed,
@@ -48,7 +48,7 @@ export const Main = () => {
           External carbon brush for quick and easy replacement."
         />
 
-        <Item
+        <HomepageItem
           image_src={jigSawImage}
           heading="DEWALT 20V MAX Jig Saw"
           content="This 20V MAX* Jig Saw has an all metal, lever-action keyless blade clamp designed for quick and easy blade

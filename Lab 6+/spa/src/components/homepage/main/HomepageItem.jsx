@@ -1,6 +1,6 @@
-import "./Item.css";
+import "./HomepageItem.css";
 
-export const Item = (props) => {
+export const HomepageItem = (props) => {
   return (
     <div className="homepage__main__item">
       <img src={props.image_src} alt="item" className="homepage__main__item__image" />
