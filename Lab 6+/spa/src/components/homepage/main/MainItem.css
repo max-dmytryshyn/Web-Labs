@@ -1,0 +1,23 @@
+.homepage__main__main_item {
+  display: flex;
+  padding: 30px;
+}
+
+.homepage__main__main_item__image {
+  width: 350px;
+  height: 350px;
+  margin: 20px;
+}
+
+.homepage__main__main_item__text {
+  margin: 20px;
+}
+
+.homepage__main__main_item__heading {
+  margin-top: 0px;
+  font-size: 40px;
+}
+
+.homepage__main__main_item__paragraph {
+  font-size: 20px;
+}

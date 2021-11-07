@@ -5,45 +5,9 @@
   border-width: 2px;
 }
 
-.main_item {
-  display: flex;
-  padding: 30px;
-}
-
-.main_item__image {
-  width: 350px;
-  height: 350px;
-  margin: 20px;
-}
-
-.main_item__text {
-  margin: 20px;
-}
-
-.main_item__heading {
-  margin-top: 0px;
-  font-size: 40px;
-}
-
-.main_item__paragraph {
-  font-size: 20px;
-}
-
 .items {
   display: flex;
   justify-content: space-evenly;
-}
-
-.item {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.item__image {
-  width: 250px;
-  height: 250px;
 }
 
 .view_more {
