@@ -29,5 +29,7 @@ class SawViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(length__gt = min_length)
 
         if max_length:
-            queryset = queryset.filter(lebth__lte = max_length)
+            queryset = queryset.filter(length__lte = max_length)
+
+        queryset = queryset.order_by('id')
         return queryset
