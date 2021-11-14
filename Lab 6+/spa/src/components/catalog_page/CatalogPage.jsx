@@ -8,7 +8,7 @@ export const CatalogPage = () => {
   const [items, setItems] = useState([]);
   return (
     <div>
-      <Header isSearchEnabled={true} />
+      <Header isSearchEnabled={true} setItems={setItems} items={items} />
       <Filters setItems={setItems} />
       <CatalogItems setItems={setItems} items={items} />
       <Footer />
