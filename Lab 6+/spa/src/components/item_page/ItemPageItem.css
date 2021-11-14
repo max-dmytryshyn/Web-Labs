@@ -1,0 +1,69 @@
+.item_page_item {
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: solid;
+  border-color: black;
+  border-width: 2px;
+}
+
+.item_page_item__upper_part {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item_page_item__upper_part__image {
+  width: 400px;
+}
+
+.item_page_item__upper_part_parameters {
+  width: 60%;
+}
+
+.item_page_item__upper_part__characteristics {
+  display: flex;
+}
+
+.item_page_item__upper_part__characteristics__drive_type {
+  background-color: darkblue;
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.item_page_item__upper_part__characteristics__material_to_saw {
+  background-color: darkgreen;
+  color: white;
+  font-size: 20px;
+  margin-left: 15px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.item_page_item__upper_part__title {
+  font-size: 35px;
+  margin-top: 8px;
+}
+
+.item_page_item__upper_part__desrcription {
+  font-size: 18px;
+}
+
+.item_page_item__upper_part__paragraph {
+  font-size: 20px;
+  font-style: oblique;
+  margin: 7px 0px;
+}
+
+.item_page_item__lower_part {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item_page_item__lower_part__price__display {
+  font-size: 30px;
+  font-weight: bold;
+}

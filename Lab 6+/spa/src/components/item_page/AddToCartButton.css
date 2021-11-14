@@ -1,4 +1,4 @@
-.catalog_item__view_more__button {
+.item_page_item__lower_part__buttons__add_to_cart_button {
   font-size: 20px;
   color: white;
   background-color: rgb(46, 46, 46);
@@ -7,12 +7,12 @@
   border-color: black;
   border-radius: 12.5px;
   margin-bottom: 10px;
-  padding: 7.5px 40px;
+  padding: 10px 30px;
 
   transition: background-color 0.3s, color 0.3s;
 }
 
-.catalog_item__view_more__button:hover {
+.item_page_item__lower_part__buttons__add_to_cart_button:hover {
   color: rgb(46, 46, 46);
   background-color: white;
 }

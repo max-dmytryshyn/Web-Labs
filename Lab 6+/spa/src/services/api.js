@@ -7,3 +7,7 @@ export const getAllWithFilters = async (driveType = "", materialToSaw = "", minL
     )
   ).data;
 };
+
+export const getById = async (id) => {
+  return (await axios.get(`http://127.0.0.1:8000/saws/all/${id}/`)).data;
+};
