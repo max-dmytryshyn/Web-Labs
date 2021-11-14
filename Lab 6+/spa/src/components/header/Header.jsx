@@ -13,9 +13,13 @@ export const Header = (props) => {
 
   const handleSearch = async (event) => {
     event.preventDefault();
-    props.setItems(
-      await getAllWithFilters().then((items) => items.filter((item) => item.name.toLowerCase().includes(searchText)))
-    );
+    props.setLoading(true);
+    setTimeout(async () => {
+      props.setItems(
+        await getAllWithFilters().then((items) => items.filter((item) => item.name.toLowerCase().includes(searchText)))
+      );
+      props.setLoading(false);
+    }, 300);
   };
 
   return (
