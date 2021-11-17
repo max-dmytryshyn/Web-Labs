@@ -1,0 +1,30 @@
+.filters {
+  padding: 30px 15px;
+  display: flex;
+  border-bottom: solid;
+  border-color: black;
+  border-width: 2px;
+}
+
+.filters__filters {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.filters__button {
+  margin-left: auto;
+  font-size: 20px;
+  color: rgb(46, 46, 46);
+  background-color: white;
+  border-radius: 20px;
+  border-color: black;
+  padding: 15px 100px;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.filters__button:hover {
+  color: white;
+  background-color: rgb(46, 46, 46);
+}

@@ -25,7 +25,7 @@
   align-items: center;
 }
 
-.footer__logo_img {
+.footer__logo__img {
   width: 75px;
   height: 75px;
   margin: 15px;
@@ -34,12 +34,6 @@
 .social_media {
   display: flex;
   align-items: center;
-}
-
-.social_media__icon {
-  width: 50px;
-  height: 50px;
-  margin: 5px;
 }
 
 .footer__diving_line {

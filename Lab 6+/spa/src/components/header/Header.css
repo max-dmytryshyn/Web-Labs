@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  align-items: center;
+  border-bottom: solid;
+  border-color: black;
+  border-width: 2px;
+}
+
+.header__logo__img {
+  width: 75px;
+  height: 75px;
+  margin-left: 15px;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-left: 270px;
+}
+
+.header__search_form {
+  margin-left: auto;
+  margin-right: 15px;
+}
+
+.header__search_form__text {
+  background: url(./images/loop_icon.svg) no-repeat;
+  background-position-x: 5px;
+  background-position-y: center;
+  background-size: 25px 25px;
+  padding: 8px 13px 8px 35px;
+  font-size: 20px;
+  border-radius: 30px;
+  border-color: black;
+}

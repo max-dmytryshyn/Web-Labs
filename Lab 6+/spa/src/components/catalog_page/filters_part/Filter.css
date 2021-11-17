@@ -1,0 +1,15 @@
+.filter {
+  padding: 15px 10px;
+  font-size: 20px;
+  border: solid;
+  border-width: 2px;
+  border-radius: 8px;
+  margin: 0px 15px;
+}
+
+.filter__select {
+  margin-left: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 5px 0px;
+}
