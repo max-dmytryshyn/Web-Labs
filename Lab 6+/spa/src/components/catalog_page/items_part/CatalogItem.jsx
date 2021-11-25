@@ -1,5 +1,5 @@
 import "./CatalogItem.css";
-import { Button } from "../../Button.jsx";
+import { ItemInfoButton } from "./ItemInfoButton";
 
 export const CatalogItem = (props) => {
   return (
@@ -16,7 +16,7 @@ export const CatalogItem = (props) => {
           <p className="catalog_item__body__price__display__value">{"$ " + props.item.price}</p>
         </div>
 
-        <Button className="catalog_item__view_more__button" label="View more" />
+        <ItemInfoButton className="catalog_item__view_more__button" id={props.item.id} />
       </div>
     </div>
   );

@@ -1,0 +1,20 @@
+.item_page_item__lower_part__buttons__go_back_button {
+  font-size: 20px;
+  color: rgb(46, 46, 46);
+  background-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 12.5px;
+  margin-bottom: 10px;
+  margin-right: 30px;
+  padding: 10px 40px;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.item_page_item__lower_part__buttons__go_back_button:hover {
+  color: white;
+  background-color: rgb(46, 46, 46);
+  border-color: black;
+}
