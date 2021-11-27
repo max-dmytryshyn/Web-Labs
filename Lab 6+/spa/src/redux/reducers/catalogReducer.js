@@ -1,12 +1,12 @@
-import { ActionsTypes } from "../constants/actionsTypes";
+import { actionsTypes } from "../constants/actionsTypes";
 const initialState = {
   catalogItems: [],
 };
 
-export const catalogItemsReducer = (state = initialState, { type, payload }) => {
+export const catalogItemsReducer = (state = initialState, { type, items }) => {
   switch (type) {
-    case ActionsTypes.SET_CATALOG_ITEMS:
-      return { ...state, catalogItems: payload };
+    case actionsTypes.SET_CATALOG_ITEMS:
+      return { ...state, catalogItems: items };
     default:
       return state;
   }

@@ -1,8 +1,16 @@
 import "./ItemPageItem.css";
 import { GoBackButton } from "./GoBackButton.jsx";
 import { AddToCartButton } from "./AddToCartButton";
+import { getById } from "../../services/api";
+import { useDispatch } from "react-redux";
+import { addItemToCart } from "../../redux/actions/cartActions";
+import { increaseItemAmount } from "../../redux/actions/cartActions";
+import { CartItemsSelector } from "../../redux/selectors/cartSelectors";
 
 export const ItemPageItem = (props) => {
+  const items = CartItemsSelector();
+  const dispatch = useDispatch();
+
   let driverTypes = {
     MEC: "Mechanical",
     ELC: "Electric",
@@ -13,6 +21,16 @@ export const ItemPageItem = (props) => {
     WO: "Wood",
     ME: "Metal",
     PO: "Polyfoam",
+  };
+
+  const addItemToCartHandle = async () => {
+    let item = await getById(props.item.id);
+    if (items.some((catalogItem) => catalogItem.id === item.id)) {
+      dispatch(increaseItemAmount(item.id));
+    } else {
+      item.amount = 1;
+      dispatch(addItemToCart(item));
+    }
   };
 
   return (
@@ -39,7 +57,7 @@ export const ItemPageItem = (props) => {
         <p className="item_page_item__lower_part__price__display"> Price: {"$" + props.item.price}</p>
         <div className="item_page_item__lower_part__buttons">
           <GoBackButton />
-          <AddToCartButton />
+          <AddToCartButton onClick={addItemToCartHandle} />
         </div>
       </div>
     </div>
