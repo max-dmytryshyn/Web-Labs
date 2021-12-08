@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const ContinueButton = () => {
   return (
-    <Link className="cart_page__continue_button" to="/catalog">
+    <Link className="cart_page__continue_button" to="/order">
       Continue
     </Link>
   );

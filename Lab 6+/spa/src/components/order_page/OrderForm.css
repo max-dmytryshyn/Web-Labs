@@ -1,0 +1,15 @@
+.order_form {
+  margin-top: 40px;
+  width: 600px;
+  margin-bottom: 120px;
+}
+
+.order_form__group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.order_form__group > * {
+  width: 275px;
+}
