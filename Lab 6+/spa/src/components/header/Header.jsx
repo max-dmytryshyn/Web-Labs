@@ -1,6 +1,6 @@
 import "./Header.css";
 import { HeaderItem } from "./HeaderItem";
-import { Logo } from "../Logo/Logo";
+import { Logo } from "../logo/Logo";
 import { getAllWithFilters } from "../../services/api";
 import { useState } from "react";
 import { useDispatch } from "react-redux";

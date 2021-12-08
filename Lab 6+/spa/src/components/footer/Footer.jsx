@@ -1,5 +1,5 @@
 import "./Footer.css";
-import { Logo } from "../Logo/Logo";
+import { Logo } from "../logo/Logo";
 import { FooterSocialMediaItem } from "./FooterSocialMediaItem";
 import facebookIcon from "./images/facebook_icon.png";
 import googleIcon from "./images/google_icon.png";
