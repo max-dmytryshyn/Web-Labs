@@ -3,9 +3,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-bottom: solid;
-  border-color: black;
-  border-width: 2px;
 }
 
 .item_page_item__upper_part {

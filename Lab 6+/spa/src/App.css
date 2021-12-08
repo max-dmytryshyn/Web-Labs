@@ -3,6 +3,8 @@
   max-width: 1400px;
   border: solid;
   border-width: 2px;
+  display: flex;
+  flex-direction: column;
 }
 
 a {

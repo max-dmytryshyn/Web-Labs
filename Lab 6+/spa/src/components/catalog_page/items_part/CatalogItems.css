@@ -3,7 +3,4 @@
   display: flex;
   flex-wrap: wrap;
   align-self: center;
-  border-bottom: solid;
-  border-color: black;
-  border-width: 2px;
 }
