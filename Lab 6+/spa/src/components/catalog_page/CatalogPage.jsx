@@ -5,14 +5,13 @@ import { CatalogItems } from "./items_part/CatalogItems";
 import { useState } from "react";
 
 export const CatalogPage = () => {
-  const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
 
   return (
     <div>
-      <Header isSearchEnabled={true} setItems={setItems} items={items} setLoading={setLoading} />
-      <Filters setItems={setItems} />
-      <CatalogItems setItems={setItems} items={items} loading={loading} setLoading={setLoading} />
+      <Header isSearchEnabled={true} setLoading={setLoading} />
+      <Filters />
+      <CatalogItems loading={loading} setLoading={setLoading} />
       <Footer />
     </div>
   );

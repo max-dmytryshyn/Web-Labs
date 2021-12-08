@@ -3,12 +3,16 @@ import { Filter } from "./Filter";
 import { Button } from "../../Button";
 import { useState } from "react";
 import { getAllWithFilters } from "../../../services/api";
+import { useDispatch } from "react-redux";
+import { setCatalogItems } from "../../../redux/actions/catalogActions";
 
-export const Filters = (props) => {
+export const Filters = () => {
   const [driveTypeFilter, setDriveTypeFilter] = useState("");
   const [materialToSawFilter, setMaterialToSawFilter] = useState("");
   const [minLengthFilter, setMinLengthFilter] = useState("");
   const [maxLengthFilter, setMaxLengthFilter] = useState("");
+
+  const dispatch = useDispatch();
 
   const handleDriveTypeFilterChange = (event) => {
     setDriveTypeFilter(event.target.value);
@@ -66,8 +70,10 @@ export const Filters = (props) => {
         className="filters__button"
         label="Apply"
         onClick={async () => {
-          props.setItems(
-            await getAllWithFilters(driveTypeFilter, materialToSawFilter, minLengthFilter, maxLengthFilter)
+          dispatch(
+            setCatalogItems(
+              await getAllWithFilters(driveTypeFilter, materialToSawFilter, minLengthFilter, maxLengthFilter)
+            )
           );
         }}
       />

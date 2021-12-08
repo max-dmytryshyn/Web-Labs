@@ -3,9 +3,13 @@ import { HeaderItem } from "./HeaderItem";
 import { Logo } from "../Logo/Logo";
 import { getAllWithFilters } from "../../services/api";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setCatalogItems } from "../../redux/actions/catalogActions";
 
 export const Header = (props) => {
   const [searchText, setSearchText] = useState("");
+
+  const dispatch = useDispatch();
 
   const handleSearchTextChange = (event) => {
     setSearchText(String(event.target.value).toLowerCase());
@@ -15,8 +19,12 @@ export const Header = (props) => {
     event.preventDefault();
     props.setLoading(true);
     setTimeout(async () => {
-      props.setItems(
-        await getAllWithFilters().then((items) => items.filter((item) => item.name.toLowerCase().includes(searchText)))
+      dispatch(
+        setCatalogItems(
+          await getAllWithFilters().then((items) =>
+            items.filter((item) => item.name.toLowerCase().includes(searchText))
+          )
+        )
       );
       props.setLoading(false);
     }, 300);
