@@ -11,3 +11,10 @@ export const getAllSawsWithFilters = async (driveType = "", materialToSaw = "", 
 export const getSawById = async (id) => {
   return (await axios.get(`http://127.0.0.1:8000/saws/all/${id}/`)).data;
 };
+
+export const login = async (email, password) => {
+  return await axios.post(`http://127.0.0.1:8000/saws_shop_users/login/`, {
+    email: email,
+    password: password,
+  });
+};

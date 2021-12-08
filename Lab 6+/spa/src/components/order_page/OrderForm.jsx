@@ -20,7 +20,7 @@ export const OrderForm = () => {
         }
         if (values.email === "") {
           errors.email = "Field required";
-        } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(values.email)) {
+        } else if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(values.email)) {
           errors.email = "Ivalid email";
         }
         if (values.phone_number === "") {
