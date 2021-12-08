@@ -18,3 +18,12 @@ export const login = async (email, password) => {
     password: password,
   });
 };
+
+export const createUser = async (first_name, last_name, email, password) => {
+  return await axios.post(`http://127.0.0.1:8000/saws_shop_users/all/`, {
+    first_name: first_name,
+    last_name: last_name,
+    email: email,
+    password: password,
+  });
+};

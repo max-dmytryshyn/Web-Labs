@@ -7,18 +7,61 @@ import { OrderPage } from "./components/order_page/OrderPage";
 import { SuccessfulOrderPage } from "./components/order_page/SuccessfulOrderPage";
 import { LoginPage } from "./components/login_page/LoginPage";
 import { RegistrationPage } from "./components/registration_page/RegistarionPage";
+import { RequireAuth } from "./components/RequireAuth";
 import "./App.css";
 
 function App() {
   return (
     <div className="app">
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/catalog" element={<CatalogPage />} />
-        <Route path="/catalog/item/:id" element={<ItemPage />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/order" element={<OrderPage />} />
-        <Route path="/successful_order" element={<SuccessfulOrderPage />} />
+        <Route
+          path="/"
+          element={
+            <RequireAuth>
+              <Homepage />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/catalog"
+          element={
+            <RequireAuth>
+              <CatalogPage />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/catalog/item/:id"
+          element={
+            <RequireAuth>
+              <ItemPage />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <RequireAuth>
+              <CartPage />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/order"
+          element={
+            <RequireAuth>
+              <OrderPage />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/successful_order"
+          element={
+            <RequireAuth>
+              <SuccessfulOrderPage />
+            </RequireAuth>
+          }
+        />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/registration" element={<RegistrationPage />} />
       </Routes>

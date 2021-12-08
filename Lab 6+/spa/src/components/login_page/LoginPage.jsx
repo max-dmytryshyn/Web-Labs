@@ -34,6 +34,7 @@ export const LoginPage = () => {
             return errors;
           }}
           onSubmit={() => {
+            localStorage.isLoggedIn = true;
             window.location.href = "/";
           }}
         >
