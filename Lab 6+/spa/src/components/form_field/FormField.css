@@ -1,0 +1,16 @@
+.form_field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_field__label {
+  font-size: 20px;
+}
+
+.form_field__input {
+  border-radius: 5px;
+  border-color: black;
+  border-width: 1.9px;
+  font-size: 18px;
+  padding: 5px;
+}

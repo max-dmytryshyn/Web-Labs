@@ -4,7 +4,7 @@ import { ItemPageItem } from "./ItemPageItem.jsx";
 import { useEffect, useState } from "react";
 import { getSawById } from "../../services/api.js";
 import { useParams } from "react-router";
-import { Loader } from "../Loader.jsx";
+import { Loader } from "../loader/Loader.jsx";
 
 export const ItemPage = () => {
   const { id } = useParams();

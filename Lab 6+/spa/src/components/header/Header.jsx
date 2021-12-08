@@ -1,7 +1,7 @@
 import "./Header.css";
 import { HeaderItem } from "./HeaderItem";
-import { Logo } from "../Logo/Logo";
 import { getAllSawsWithFilters } from "../../services/api";
+import { Logo } from "../logo/Logo";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setCatalogItems } from "../../redux/actions/catalogActions";
