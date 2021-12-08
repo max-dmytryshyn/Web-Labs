@@ -2,7 +2,7 @@ import { Footer } from "../footer/Footer.jsx";
 import { Header } from "../header/Header.jsx";
 import { ItemPageItem } from "./ItemPageItem.jsx";
 import { useEffect, useState } from "react";
-import { getById } from "../../services/api.js";
+import { getSawById } from "../../services/api.js";
 import { useParams } from "react-router";
 import { Loader } from "../Loader.jsx";
 
@@ -14,7 +14,7 @@ export const ItemPage = () => {
   useEffect(async () => {
     setLoading(true);
     setTimeout(async () => {
-      setItem(await getById(id));
+      setItem(await getSawById(id));
       setLoading(false);
     }, 500);
   }, [id]);

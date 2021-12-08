@@ -1,7 +1,7 @@
 import "./CatalogItems.css";
 import { CatalogItem } from "./CatalogItem.jsx";
 import { useEffect } from "react";
-import { getAllWithFilters } from "../../../services/api";
+import { getAllSawsWithFilters } from "../../../services/api";
 import { Loader } from "../../Loader.jsx";
 import { useDispatch } from "react-redux";
 import { CatalogItemsSelector } from "../../../redux/selectors/catalogSelectors";
@@ -14,7 +14,7 @@ export const CatalogItems = (props) => {
   useEffect(async () => {
     props.setLoading(true);
     setTimeout(async () => {
-      dispatch(setCatalogItems(await getAllWithFilters()));
+      dispatch(setCatalogItems(await getAllSawsWithFilters()));
       props.setLoading(false);
     }, 500);
   }, []);

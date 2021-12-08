@@ -1,7 +1,7 @@
 import "./Header.css";
 import { HeaderItem } from "./HeaderItem";
 import { Logo } from "../Logo/Logo";
-import { getAllWithFilters } from "../../services/api";
+import { getAllSawsWithFilters } from "../../services/api";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setCatalogItems } from "../../redux/actions/catalogActions";
@@ -21,7 +21,7 @@ export const Header = (props) => {
     setTimeout(async () => {
       dispatch(
         setCatalogItems(
-          await getAllWithFilters().then((items) =>
+          await getAllSawsWithFilters().then((items) =>
             items.filter((item) => item.name.toLowerCase().includes(searchText))
           )
         )
