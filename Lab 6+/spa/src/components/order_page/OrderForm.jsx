@@ -30,11 +30,7 @@ export const OrderForm = () => {
         }
         if (values.address === "") {
           errors.address = "Field required";
-        } else if (
-          !/^[A-Z]{1}[a-z]*(-{1}[A-Z]{1}[a-z]*){0,3},\s?[A-Z]{1}[a-z]*(-{1}[A-Z]{1}[a-z]*){0,3},\s?[A-Z]{1}[a-z]*(-{1}[A-Z]{1}[a-z]*){0,3},\s?[0-9a-z]{1,4}$/.test(
-            values.address
-          )
-        ) {
+        } else if (!/^([A-Z]{1}[a-z]*(-{1}[A-Z]{1}[a-z]*){0,3},\s?){3}[0-9a-z]{1,4}$/.test(values.address)) {
           errors.address = "Ivalid address";
         }
         return errors;
