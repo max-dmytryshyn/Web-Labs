@@ -2,7 +2,7 @@ import "./Filters.css";
 import { Filter } from "./Filter";
 import { Button } from "../../Button";
 import { useState } from "react";
-import { getAllWithFilters } from "../../../services/api";
+import { getAllSawsWithFilters } from "../../../services/api";
 import { useDispatch } from "react-redux";
 import { setCatalogItems } from "../../../redux/actions/catalogActions";
 
@@ -72,7 +72,7 @@ export const Filters = () => {
         onClick={async () => {
           dispatch(
             setCatalogItems(
-              await getAllWithFilters(driveTypeFilter, materialToSawFilter, minLengthFilter, maxLengthFilter)
+              await getAllSawsWithFilters(driveTypeFilter, materialToSawFilter, minLengthFilter, maxLengthFilter)
             )
           );
         }}

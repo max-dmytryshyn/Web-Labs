@@ -9,7 +9,7 @@ export const FormField = (props) => {
       <label htmlFor={props.name} className="form_field__label">
         {props.label}
       </label>
-      <Field type={props.type} name={props.name} className="form_field__input" />
+      <Field type={props.type} name={props.name} placeHolder={props.placeHolder} className="form_field__input" />
       <ErrorMessage name={props.name}>{(msg) => <FormFieldErrorMessage message={msg} />}</ErrorMessage>
     </div>
   );

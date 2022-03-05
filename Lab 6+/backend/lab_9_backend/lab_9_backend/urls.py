@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('saws/', include('saws.urls')),
+    path('saws_shop_users/', include('saws_shop_users.urls'))
 ]

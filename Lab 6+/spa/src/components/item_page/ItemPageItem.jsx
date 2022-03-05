@@ -1,7 +1,7 @@
 import "./ItemPageItem.css";
 import { GoBackButton } from "./GoBackButton.jsx";
 import { AddToCartButton } from "./AddToCartButton";
-import { getById } from "../../services/api";
+import { getSawById } from "../../services/api";
 import { useDispatch } from "react-redux";
 import { addItemToCart } from "../../redux/actions/cartActions";
 import { increaseItemAmount } from "../../redux/actions/cartActions";
@@ -24,7 +24,7 @@ export const ItemPageItem = (props) => {
   };
 
   const addItemToCartHandle = async () => {
-    let item = await getById(props.item.id);
+    let item = await getSawById(props.item.id);
     if (items.some((catalogItem) => catalogItem.id === item.id)) {
       dispatch(increaseItemAmount(item.id));
     } else {

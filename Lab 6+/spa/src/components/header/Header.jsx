@@ -1,10 +1,11 @@
 import "./Header.css";
 import { HeaderItem } from "./HeaderItem";
+import { getAllSawsWithFilters } from "../../services/api";
 import { Logo } from "../logo/Logo";
-import { getAllWithFilters } from "../../services/api";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setCatalogItems } from "../../redux/actions/catalogActions";
+import { Link } from "react-router-dom";
 
 export const Header = (props) => {
   const [searchText, setSearchText] = useState("");
@@ -21,7 +22,7 @@ export const Header = (props) => {
     setTimeout(async () => {
       dispatch(
         setCatalogItems(
-          await getAllWithFilters().then((items) =>
+          await getAllSawsWithFilters().then((items) =>
             items.filter((item) => item.name.toLowerCase().includes(searchText))
           )
         )
@@ -43,6 +44,15 @@ export const Header = (props) => {
           <input type="text" class="header__search_form__text" id="search_input" onChange={handleSearchTextChange} />
         </form>
       )}
+      <Link
+        className="logout_button"
+        to="/login"
+        onClick={() => {
+          localStorage.isLoggedIn = false;
+        }}
+      >
+        Log out
+      </Link>
     </header>
   );
 };

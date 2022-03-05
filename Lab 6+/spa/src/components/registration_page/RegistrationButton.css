@@ -1,0 +1,17 @@
+.registration_button {
+  font-size: 24px;
+  color: white;
+  background-color: rgb(1, 145, 212);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(1, 33, 141);
+  padding: 5px 100px;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.registration_button:hover {
+  color: rgb(46, 46, 46);
+  background-color: white;
+  border-color: black;
+}
